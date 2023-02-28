@@ -5,7 +5,10 @@ metadata:
   name: poderic
   labels:
     app: motd
+    env: prod
 spec:
   containers:
   - name: motd
     image: yukirona/motd-docker
+    
+      
