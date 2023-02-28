@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: motd-deployment-eric
+spec:
+  replicas: 3 # Spécifiez ici le nombre d'instances souhaité
+  selector:
+    matchLabels:
+       app: motd
+       env: prod
+  template:
+    metadata:
+      labels:
+         app: motd
+         env: prod
+    spec:
+      containers:
+      - name: motd-container
+        image: yukirona/motd-docker # Spécifiez ici le nom de l'image contenant votre motd container
+      
+        
