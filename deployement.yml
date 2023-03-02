@@ -2,12 +2,15 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: motd-deployment-eric
+  labels:
+     test: ingress
 spec:
   replicas: 3 # Spécifiez ici le nombre d'instances souhaité
   selector:
     matchLabels:
        app: motd
        env: prod
+      
   template:
     metadata:
       labels:

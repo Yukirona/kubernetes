@@ -1,16 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: canary
+  name: eric-canary
 spec:
   selector:
     matchLabels:
-      app: motd
+      app: motd-canary
   replicas: 2
   template:
     metadata:
       labels:
-        app: motd
+        app: motd-canary
+        env: prod
     spec:
       containers:
       - name: motd
